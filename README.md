@@ -39,8 +39,10 @@ or optimised. The current master is `verita-sting-1920x1080-3.webm`.
 Behaviour (current):
 - The site root opens on a full-screen intro (`#verita-sting` in `index.html`).
 - The clip autoplays muted/inline on every refresh.
-- When playback ends it holds on the last frame and reveals two CTAs:
-  **ENTER** (fades the intro out over 700 ms) and **PLAY** (restarts the clip from 0).
+- The clip is 4 seconds (the original 7s master, first 6s sped up 1.5x). When playback ends the intro fades out
+  by itself over 700 ms. There is no ENTER button. **Skip** (top right) and `Esc` still close it at any time.
+  If the video errors, autoplay is blocked or it is not ready within 2.5s, the intro closes instead of waiting.
+  A 7s safety timer closes it regardless.
 - `Esc` and the bottom-right **Skip** button both dismiss the intro immediately.
 - Fallbacks: if autoplay is blocked, the video errors, or `canplay`/`canplaythrough`
   has not fired within 2.5 s, the CTAs appear anyway so the visitor is never trapped.
